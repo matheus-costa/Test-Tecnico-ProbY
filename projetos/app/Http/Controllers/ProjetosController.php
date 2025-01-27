@@ -68,15 +68,24 @@ class ProjetosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $projeto=$this->projeto->find($id);
+        return view('create',compact('projeto'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+    { 
+        $this->projeto->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'descricao'=>$request->descricao,
+            'data'=>$request->data,
+            'status'=>$request->status
+        ]);
+        #return redirect('projetos');
+        return view('index', compact('projeto'));  
+
     }
 
     /**
