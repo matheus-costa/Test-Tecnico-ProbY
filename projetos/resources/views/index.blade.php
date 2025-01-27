@@ -26,7 +26,7 @@
           <a href="{{url("projetos/$projetos->id")}}">
             <button class="btn btn-dark">Visualizar</button>
          </a>
-         <a href="">
+         <a href="{{url("projetos/$projetos->id/edit")}}">
             <button class="btn btn-warning">Editar</button>
          </a> 
 
